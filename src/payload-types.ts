@@ -82,6 +82,7 @@ export interface Config {
     BulletList: BulletListBlock;
     Card: CardBlock;
     CardGroup: CardGroupBlock;
+    ComponentPreview: ComponentPreviewBlock;
     cardGrid: CardGrid;
     caseStudyCards: CaseStudyCards;
     caseStudiesHighlight: CaseStudiesHighlight;
@@ -3089,6 +3090,7 @@ export interface CardBlock {
  * via the `definition` "CardGroupBlock".
  */
 export interface CardGroupBlock {
+  variant: 'default' | 'compact';
   content?: {
     root: {
       type: string;
@@ -3107,6 +3109,64 @@ export interface CardGroupBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'CardGroup';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ComponentPreviewBlock".
+ */
+export interface ComponentPreviewBlock {
+  component:
+    | 'AnimateHeight'
+    | 'Banner'
+    | 'Button'
+    | 'Card'
+    | 'CodeEditor'
+    | 'Collapsible'
+    | 'CopyToClipboard'
+    | 'DatePicker'
+    | 'Dropzone'
+    | 'ErrorPill'
+    | 'Gutter'
+    | 'Hamburger'
+    | 'Link'
+    | 'ListAndPagination'
+    | 'ModalsAndDrawers'
+    | 'MotionAndLoading'
+    | 'Pill'
+    | 'PillSelector'
+    | 'Popup'
+    | 'ReactSelect'
+    | 'SearchFilter'
+    | 'ShimmerEffect'
+    | 'Table'
+    | 'Thumbnail'
+    | 'TimezonePicker'
+    | 'Tooltip';
+  example:
+    | 'actions'
+    | 'basic'
+    | 'counts'
+    | 'confirmation'
+    | 'disabled'
+    | 'drawer'
+    | 'error'
+    | 'fallback'
+    | 'interactive'
+    | 'menu'
+    | 'overlay'
+    | 'pagination'
+    | 'primary'
+    | 'progress'
+    | 'readOnly'
+    | 'shapes'
+    | 'sizes'
+    | 'states'
+    | 'staggered'
+    | 'styles'
+    | 'variants';
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ComponentPreview';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
